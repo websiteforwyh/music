@@ -3,57 +3,81 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>登录页面设计</title>
+    <title>音乐</title>
 
     <style>
-        form {
-            width: 260px;
-            height: 150px;
-            margin: 0 auto;
-            border: 1px solid #ccc;
-            padding: 20px;
-            background-color: azure;
-        }
-        
-        .right {
-            float: right;
-        }
-        
-        p {
-            float: right;
-            font-size: 10px;
+        html,
+        body {
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
         
         .box {
-            display: block;
-            margin-top: 40px;
+            text-align: center;
         }
         
-        .login {
-            margin-left: 150px;
+        dl {
+            display: none;
+        }
+        
+        a {
+            font-size: 22px;
+            color: #5e2d00;
+            padding: 10px;
+            display: inline-block;
+        }
+        
+        a:link a:visited {
+            text-decoration: none;
+        }
+        
+        a:hover a:active {
+            text-decoration: underline;
+            color: red;
+        }
+        
+         :target {
+            display: inline-block;
+        }
+        
+        span {
+            color: red;
         }
     </style>
+
+    <script>
+        var musicLink = document.querySelector('a[href="#new1"]');
+        musicLink.addEventListener('click', function(event) {
+            event.stopPropagation(); // 阻止事件传播，不触发外部滚动条滚动
+            var offsetTop = document.getElementById('content').offsetTop; // 获取内容区域的偏移量
+            window.scrollTo(0, offsetTop); // 滚动到内容区域的偏移量位置
+        });
+    </script>
+
 </head>
 
 <body>
-    <form action="#" method="post">
-        用户名：
-        <input class="right" type="text" placeholder="请输入您的用户名" maxlength="6">
-        <br><br>密码：
-        <input class="right" type="password" placeholder="请输入您的密码">
-        <p><a href="">忘记密码？</a></p><br>
-        <div class="box">
-            <input type="reset">
-            <input class="login" type="submit" value="登录">
-        </div>
-        <p>
-            <input type="radio"> 阅读并接受
-            <a href="">登录协议</a> 和
-            <a href="">隐私政策</a>
-        </p>
+    <div id="content" class="box">
+        <h2>I_MUSIC</h2>
+        <hr size="3" color="#5e2d00" width="750px">
+        <nav>
+            <a href="#new1">music</a>
+            <a href="#new2">待开发</a>
+        </nav>
+        <hr size="3" color="#5e2d00" width="750px">
 
-    </form>
+        <dl id="new1">
+            <iframe src="music.html" width="756.4px" height="506.4px" frameborder="0"></iframe>
+        </dl>
+        <dl id="new2">
+            <p>待开发</p>
+        </dl>
+    </div>
 </body>
 
 </html>
