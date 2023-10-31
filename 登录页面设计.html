@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面设计</title>
+
+    <style>
+        form {
+            width: 260px;
+            height: 150px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: azure;
+        }
+        
+        .right {
+            float: right;
+        }
+        
+        p {
+            float: right;
+            font-size: 10px;
+        }
+        
+        .box {
+            display: block;
+            margin-top: 40px;
+        }
+        
+        .login {
+            margin-left: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post">
+        用户名：
+        <input class="right" type="text" placeholder="请输入您的用户名" maxlength="6">
+        <br><br>密码：
+        <input class="right" type="password" placeholder="请输入您的密码">
+        <p><a href="">忘记密码？</a></p><br>
+        <div class="box">
+            <input type="reset">
+            <input class="login" type="submit" value="登录">
+        </div>
+        <p>
+            <input type="radio"> 阅读并接受
+            <a href="">登录协议</a> 和
+            <a href="">隐私政策</a>
+        </p>
+
+    </form>
+</body>
+
+</html>
